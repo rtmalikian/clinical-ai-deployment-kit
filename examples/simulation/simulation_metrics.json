@@ -1,0 +1,14 @@
+{
+  "stamp": "SIMULATED / SYNTHETIC DATA \u2014 NOT A REAL PILOT",
+  "days": 90,
+  "seed": 20261028,
+  "requests": 926,
+  "first_pass_rate_baseline": 0.7138,
+  "first_pass_rate_with_kit": 0.9384,
+  "mean_turnaround_days_baseline": 4.78,
+  "mean_turnaround_days_with_kit": 3.4,
+  "mean_assembly_minutes_baseline": 63.72,
+  "mean_assembly_minutes_with_kit": 8.04,
+  "coordinator_hours_saved_simulated": 859.4,
+  "assumptions": "All inputs are synthetic assumptions chosen by the author (see module docstring). They are NOT measured results from any real clinic."
+}

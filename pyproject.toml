@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clinical-ai-deployment-kit"
+version = "0.1.0"
+description = "Clinical AI Deployment Kit — HIPAA & SOC 2 compliance-as-code, FHIR R4 validation, SSO/SAML/OIDC, and a 90-day healthcare AI pilot playbook (FDE kit)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Raphael Malikian", email = "rtmalikian@gmail.com"}]
+keywords = ["hipaa", "soc2", "healthcare-ai", "fhir", "synthea", "sso", "saml", "oidc", "scim", "forward-deployed-engineering", "clinical-ai", "compliance-as-code"]
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+app = ["fastapi>=0.115"]
+dev = ["pytest>=8", "fastapi>=0.115", "httpx>=0.27"]
+
+[project.scripts]
+deployment-kit-scan = "deployment_kit.scanner:main"
+deployment-kit-fhir-validate = "deployment_kit.fhir_validate:main"
+deployment-kit-simulate = "deployment_kit.simulate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
