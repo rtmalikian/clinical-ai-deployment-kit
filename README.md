@@ -54,6 +54,10 @@ uvicorn deployment_kit.app:app --port 8000   # identity demo (OIDC + SCIM)
 ## Tests
 49 tests, all passing (scanner rules on compliant + deliberately non-compliant fixture repos, backup/restore round-trip, OIDC signature/expiry/issuer/audience/RBAC, SAML parsing/validation/tamper rejection, FHIR validators + planted-defect detection, simulation determinism + metric math, SCIM).
 
+## Epic open.epic MCP (documentation lookup)
+
+The FHIR validator can record which **Epic API specification** each resource type was validated against, via Epic's open.epic MCP server (`https://mcp.open.epic.com`, tools `search_documents` / `get_document`). This is **documentation/spec lookup only — not patient-data access**: no PHI is ever sent (an in-code no-PHI guard refuses patient-like queries), patient data flows only through the FHIR R4 paths, and validation degrades gracefully when the server is unavailable. Opt in with `python -m deployment_kit.fhir_validate bundle.json --with-epic-specs`. Full details, AI-client setup (`epic-mcp.mcp.json.example`), and config: **[EPIC_MCP.md](EPIC_MCP.md)**.
+
 ## License
 MIT. Author: Raphael Malikian <rtmalikian@gmail.com> · [github.com/rtmalikian](https://github.com/rtmalikian) · [x.com/rtmalikian](https://x.com/rtmalikian)
 
